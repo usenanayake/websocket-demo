@@ -12,7 +12,7 @@ import org.springframework.web.socket.messaging.SessionConnectedEvent;
 import org.springframework.web.socket.messaging.SessionDisconnectEvent;
 
 /**
- * Created by rajeevkumarsingh on 25/07/17.
+ * A custom component that is used somewhere inside the libraries.
  */
 @Component
 public class WebSocketEventListener {
@@ -27,6 +27,9 @@ public class WebSocketEventListener {
         logger.info("Received a new web socket connection");
     }
 
+    /*
+     * This listener is called when a user disconnects.
+     */
     @EventListener
     public void handleWebSocketDisconnectListener(SessionDisconnectEvent event) {
         StompHeaderAccessor headerAccessor = StompHeaderAccessor.wrap(event.getMessage());

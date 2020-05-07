@@ -18,6 +18,9 @@ var colors = [
     '#ffc107', '#ff85af', '#FF9800', '#39bbb0'
 ];
 
+/*
+ * This is called when a user registers to a particualr channel.
+ */
 function connect(event) {
     username = document.querySelector('#name').value.trim();
 
@@ -33,7 +36,9 @@ function connect(event) {
     event.preventDefault();
 }
 
-
+/*
+ * Called right after getting connected.
+ */
 function onConnected() {
 	chatId = document.querySelector('#chatid').value.trim();
 //	alert(chatId);
@@ -71,7 +76,9 @@ function onError(error) {
     connectingElement.style.color = 'red';
 }
 
-
+/*
+ * Called whenever a message is sent.
+ */
 function sendMessage(event) {
 	var strAppTopic = '/app/chat.addUser/';
 	var chatAppTopic = strAppTopic.concat(chatId);

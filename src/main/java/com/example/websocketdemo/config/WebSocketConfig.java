@@ -4,8 +4,9 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.messaging.simp.config.MessageBrokerRegistry;
 import org.springframework.web.socket.config.annotation.*;
 
-/**
- * Created by rajeevkumarsingh on 24/07/17.
+/*
+ * This is a configuration.
+ * These configs are loaded at the start of the Spring application.
  */
 @Configuration
 @EnableWebSocketMessageBroker
@@ -20,7 +21,6 @@ public class WebSocketConfig implements WebSocketMessageBrokerConfigurer {
     public void configureMessageBroker(MessageBrokerRegistry registry) {
         registry.setApplicationDestinationPrefixes("/app");
         registry.enableSimpleBroker("/topic");   // Enables a simple in-memory broker
-
 
         //   Use this for enabling a Full featured broker like RabbitMQ
 
